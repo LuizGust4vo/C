@@ -9,7 +9,7 @@ int main () { // Principal função do código .
 // COMO DECLARAR UMA VARIÁVEL?
 // Sintaxe:
 // tipo nome;
-                                                                    // Dentro da fun��o main temos um bloco de comandos na linguagem C.
+                                                                    // Dentro da função main temos um bloco de comandos na linguagem C.
 // TIPOS DE VARIÁVEIS:
 // char -> caracter
 // int -> inteiro simples
