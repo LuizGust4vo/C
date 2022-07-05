@@ -4,17 +4,17 @@
 int main(){
 setlocale(LC_ALL, "");
 
-int n1,n2;
+int n1, n2;
 int soma;
 
 printf("Digite um Número: ");
-scanf("%i",&n1);
+scanf("%i", &n1);
 
 printf("Digite um Número: ");
-scanf("%i",&n2);
+scanf("%i", &n2);
 
-soma=n1+n2;
-printf("A soma é igual = %i",soma);
+soma = n1 + n2;
+printf("A soma é igual = %i", soma);
 
 return 0;
 }
