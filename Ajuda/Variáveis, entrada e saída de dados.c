@@ -1,47 +1,47 @@
-#include <stdio.h> // Inclui a biblioteca stdio.h ao nosso cÛdigo.
-#include <locale.h> // Inclui a biblioteca locale.h para definir o idioma e permitir acentuaÁ„o.
+#include <stdio.h> // Inclui a biblioteca stdio.h ao nosso c√≥digo.
+#include <locale.h> // Inclui a biblioteca locale.h para definir o idioma e permitir acentua√ß√£o.
 // * stdio = standard input-output *
 
-int main () { // Principal funÁ„o do cÛdigo .
+int main () { // Principal fun√ß√£o do c√≥digo .
 setlocale(LC_ALL, ""); // Configura o idioma; "" = vazio = idioma do sistema.
 
-// DeclaraÁ„o de vari·veis: representaÁ„o de valores vari·veis;
-// DeclaraÁ„o de constantes: representaÁ„o de valores constantes;
+// Declara√ß√£o de vari√°veis: representa√ß√£o de valores vari√°veis;
+// Declara√ß√£o de constantes: representa√ß√£o de valores constantes;
 
-// COMO DECLARAR UMA VARI¡VEL?
+// COMO DECLARAR UMA VARI√ÅVEL?
 // Sintaxe:
 // tipo nome;
-                                                                    // Dentro da funÁ„o main temos um bloco de comandos na linguagem C.
-// TIPOS DE VARI¡VEIS:
+                                                                    // Dentro da fun√ß√£o main temos um bloco de comandos na linguagem C.
+// TIPOS DE VARI√ÅVEIS:
 // char -> caracter
 // int -> inteiro simples
 // long int -> inteiro longo
-// float -> real de precis„o simples
-// double -> real de precis„o dupla
+// float -> real de precis√£o simples
+// double -> real de precis√£o dupla
 
 // Exemplos:
 
 int a, b;
 float x, y;
 
-// ENTRADA E SAÕDA DE DADOS:
+// ENTRADA E SA√çDA DE DADOS:
 
 // Exemplo de entrada:
 
 printf ("Hello World!");
 printf ("\n\nDigite o valor de a e b, respectivamente: ");
-scanf ("%d %d", &a, &b);        // scanf: lÍ um valor da entrada padr„o (teclado)
+scanf ("%d %d", &a, &b);        // scanf: l√™ um valor da entrada padr√£o (teclado)
 
-// Exemplo de saÌda:
-printf ("\nO valor de a = %d e o valor de b = %d.\n", a, b);   // "%especificador", nome da vari·vel -> informa o formato da vari·vel e a vari·vel a ser mostrada
+// Exemplo de sa√≠da:
+printf ("\nO valor de a = %d e o valor de b = %d.\n", a, b);   // "%especificador", nome da vari√°vel -> informa o formato da vari√°vel e a vari√°vel a ser mostrada
 
 // ESPECIFICADORES:
 
 // %c caracter
 // %d inteiro
 // %ld inteiro longo
-// %f float/double
-// %lf float/double longo
+// %f float
+// %lf double
 
 return 0;     // "0" informando ao sistema operacional que o programa foi executado corretamente.
 }
