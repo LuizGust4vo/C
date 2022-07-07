@@ -15,11 +15,11 @@ int main ()
 
     Troco = Pago - VP;
     A = Troco / 500;
-    B = (Troco - A) / 100;
-    C = (Troco - (B * 100)) / 50;
-    D = (Troco - (B * 100) - (C * 50)) / 10;
-    E = (Troco - (B * 100) - (C * 50) - (D * 10)) / 5;
-    F = (Troco - (B * 100) - (C * 50) - (D * 10)) - (E * 5);
+    B = (Troco - (A * 500)) / 100;
+    C = (Troco - (A * 500) - (B * 100)) / 50;
+    D = (Troco - (A * 500) - (B * 100) - (C * 50)) / 10;
+    E = (Troco - (A * 500) - (B * 100) - (C * 50) - (D * 10)) / 5;
+    F = (Troco - (A * 500) - (B * 100) - (C * 50) - (D * 10) - (E * 5));
 
     if (VP <= Pago && VP >= 0 && Pago >= 0 && VP <= pow(10,6) && Pago <= pow(10, 6))
     {
