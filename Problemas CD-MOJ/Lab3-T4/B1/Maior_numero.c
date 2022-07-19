@@ -15,7 +15,7 @@ int main ()
     if (n >= 1 && n <= pow(10, 5)){
     do{
     scanf ("\n%d", &m);
-
+    if (cont == 0) B = m;
     if (m > B) B = m;
     printf ("%d\n", m);
     printf ("%d\n\n", B);
