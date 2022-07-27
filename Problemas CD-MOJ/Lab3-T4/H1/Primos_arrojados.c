@@ -6,63 +6,65 @@ int main ()
 
     setlocale (LC_ALL, "");
 
-    int t, n, a, cont1 = 0, cont2 = 0;
+    int testes, n, cont1 = 0;
 
-    printf ("Digite a quantidade de linhas: ");
-    scanf ("%d", &t);
-    printf ("\n");
+    printf ("Digite o número de casos testes: ");
+    scanf ("%d", &testes);
 
-    do
+    for (int cont = 0; cont < testes; cont++)
     {
-        printf ("Digite um número: ");
+        printf ("\nDigite um número: ");
         scanf ("%d", &n);
 
-        for (a = 1; a <= n; a++)
+        for (int a = 1; a <= n; a++)
         {
-            if (n % a == 0)
-                cont1++;
+            if (n % a == 0) cont1++;
         }
 
-        if (cont1 == 2)
+        if (cont1 != 2)
         {
+            printf ("N\n");
+            cont1 = 0;
+        }
+
+        else if (cont1 == 2)
+        {
+            cont1 = 0;
             if (n < 10)
             {
                 printf ("S\n");
+                cont1 = 0;
             }
-
-            else if (n >= 10 && n <= 9999999)
+            else if (n >= 11)
             {
                 do
                 {
                     cont1 = 0;
-                    n /= 10;
-                    for (a = 1; a <= n ; a++)
+                    n = n / 10;
+                    for (int a = 1; a <= n; a++)
                     {
-                        if (n % a == 0)
-                            cont1++;
+                        if (n % a == 0) cont1++;
                     }
-
-                } while (n > 10);
-
-                    if (cont1 == 2)
-                    {
-                        printf ("S\n");
-                    }
-                    else {
-                        printf ("N\n");
-                    }
+                }
+                while (n >= 10);
+                if (cont1 == 2)
+                {
+                    printf ("S\n");
+                    cont1 = 0;
+                }
+                else
+                {
+                    printf ("N\n");
+                    cont1 = 0;
+                }
             }
         }
 
         else
         {
-            printf ("N\n", n);
+            printf ("N\n");
         }
-        cont1 = 0;
-        cont2++;
-        printf ("\n");
     }
-    while (cont2 < t);
 
     return 0;
 }
