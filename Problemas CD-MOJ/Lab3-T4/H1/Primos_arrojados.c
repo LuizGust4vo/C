@@ -1,64 +1,60 @@
 #include <stdio.h>
-#include <locale.h>
+#include <stdbool.h>
 
-int main ()
+int isPrime(int n)
 {
+    int i;
+    bool flag = true;
 
-    setlocale (LC_ALL, "");
+    if (n == 0 || n == 1)
+        flag = false;
 
-    int testes, n, cont1 = 0;
-
-    printf ("Digite o número de casos testes: ");
-    scanf ("%d", &testes);
-
-    for (int cont = 0; cont < testes; cont++)
+    for (i = 2; i <= n / 2; i++)
     {
-        printf ("\nDigite um número: ");
-        scanf ("%d", &n);
-
-        for (int a = 1; a <= n; a++)
+        if (n % i == 0)
         {
-            if (n % a == 0) cont1++;
+            flag = false;
+            break;
         }
+    }
 
-        if (cont1 != 2)
-        {
-            printf ("N\n");
-            cont1 = 0;
-        }
+    return flag;
+}
 
-        else if (cont1 == 2)
+int main()
+{
+    int i, t, n, flag;
+    scanf("%d", &t);
+
+    int arr[t];
+
+    for (i = 0; i < t; i++)
+    {
+        scanf("%d", &arr[i]);
+    }
+
+    for (i = 0; i < t; i++)
+    {
+        n = arr[i];
+        flag = false;
+
+        while (n != 0)
         {
-            cont1 = 0;
-            if (n < 10)
+            if (!isPrime(n))
             {
-                printf ("S\n");
-                cont1 = 0;
+                flag = true;
+                break;
             }
-            else if (n >= 11)
-            {
-                do
-                {
-                    cont1 = 0;
-                    n = n / 10;
-                    for (int a = 1; a <= n; a++)
-                    {
-                        if (n % a == 0) cont1++;
-                    }
-                }
-                while (n >= 10);
-                if (cont1 == 2)
-                {
-                    printf ("S\n");
-                    cont1 = 0;
-                }
-                else
-                {
-                    printf ("N\n");
-                    cont1 = 0;
-                }
-            }
+
+            n /= 10;
         }
+
+        arr[i] = flag;
+    }
+
+    for (i = 0; i < t; i++)
+    {
+        printf("%s\n", arr[i] ? "N" : "S");
     }
 
     return 0;
