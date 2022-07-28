@@ -1,38 +1,61 @@
 #include <stdio.h>
 #include <locale.h>
 
-int main (){
+int main ()
+{
 
-setlocale (LC_ALL, "");
+    setlocale (LC_ALL, "");
 
-int d, r, c, m1, m2, melhor[3], m = 0, nota, n = 0, cont1 = 0;
+    int R, a = 0, b = 0, m1 = 1000, m2 = 1000, m3 = 1000, c, n;
 
-printf ("Digite quantos dias de viagem: ");
-scanf ("%d", &d);
-printf ("\n");
+    for (int cont = 1; cont <= 3; cont++)
+    {
+        printf ("\nDigite a quantidade de restaurantes: ");
+        scanf ("%d", &R);
 
-do {
-printf ("Digite quantos restaurantes existem na cidade: ");
-scanf ("%d", &r);
-for (int a = 0; a < r; a++){
-printf ("Digite o código e a nota do restaurante: ");
-scanf ("%d %d", &c, &nota);
+        for (int cont1 = 1; cont1 <= R; cont1++)
+        {
+            printf ("Digite o código e a nota do restaurante: ");
+            scanf ("%d %d", &c, &n);
+            if (n >= a)
+            {
 
-if (nota >= m && c <= melhor){
-m = nota;
-m2 = c;
+                if (cont == 1 && m1 > c)
+                {
+                    m1 = c;
+                    a = n;
+                }
+
+                else if (cont == 2 && m2 > c)
+                {
+                    m2 = c;
+                    a = n;
+                }
+
+                else if (cont == 3 && m3 > c)
+                {
+                    m3 = c;
+                    a = n;
+                }
+
+            }
+        }
+
+        a = 0;
+    }
+
+    printf ("\nDia 1");
+    printf ("\nMelhor restaurante: %d\n", m1);
+
+    printf ("\nDia 2");
+    printf ("\nMelhor restaurante: %d\n", m2);
+
+    printf ("\nDia 3");
+    printf ("\nMelhor restaurante: %d\n", m3);
+
+
+    return 0;
 }
-else if (nota >= m){
-m = nota;
-m2 = c;
-}
-melhor[a] = m2;
-}
-cont1++;
-} while (cont1 < d);
-
-for (int cont2 = 1; cont2 <= d; cont2++){
-for (int z = 0; z < 3; z++){
 printf ("\nDia %d\n", cont2);
 printf ("Código do restaurante %d: %d \n", cont2, melhor[cont2]);
 }}
