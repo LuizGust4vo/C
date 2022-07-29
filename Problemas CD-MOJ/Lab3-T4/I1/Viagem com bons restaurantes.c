@@ -6,59 +6,45 @@ int main ()
 
     setlocale (LC_ALL, "");
 
-    int R, a = 0, b = 0, m1 = 1000, m2 = 1000, m3 = 1000, c, n;
+    int d, r, c, n, a = 0;
 
-    for (int cont = 1; cont <= 3; cont++)
+    printf ("Digite quantos dias de viagem: ");
+    scanf ("%d", &d);
+    int v1[d], v2[d], vc[d];
+
+    for (a = 0; a < d; a++) v2[a] = 0;
+
+    for (int cont = 0; cont < d; cont++)
     {
-        printf ("\nDigite a quantidade de restaurantes: ");
-        scanf ("%d", &R);
+        printf ("Digite quantos restaurantes existem na cidade: ");
+        scanf ("%d", &r);
 
-        for (int cont1 = 1; cont1 <= R; cont1++)
+        for (int cont1 = 0; cont1 < r; cont1++)
         {
             printf ("Digite o código e a nota do restaurante: ");
-            scanf ("%d %d", &c, &n);
-            if (n >= a)
+            scanf ("%d %d", &c, &v1[cont]);
+
+            if (v1[cont] > v2[cont])
             {
-
-                if (cont == 1 && m1 > c)
-                {
-                    m1 = c;
-                    a = n;
-                }
-
-                else if (cont == 2 && m2 > c)
-                {
-                    m2 = c;
-                    a = n;
-                }
-
-                else if (cont == 3 && m3 > c)
-                {
-                    m3 = c;
-                    a = n;
-                }
-
+                vc[cont] = c;
+                v2[cont] = v1[cont];
             }
-        }
 
-        a = 0;
+            else if (v1[cont] == v2[cont])
+            {
+                if (c < vc[cont]) vc[cont] = c;
+                if (c > vc[cont]) vc[cont] = vc[cont];
+            }
+
+        }
     }
 
-    printf ("\nDia 1");
-    printf ("\nMelhor restaurante: %d\n", m1);
-
-    printf ("\nDia 2");
-    printf ("\nMelhor restaurante: %d\n", m2);
-
-    printf ("\nDia 3");
-    printf ("\nMelhor restaurante: %d\n", m3);
+    for (int cont = 0; cont < d; cont++)
+    {
+        printf ("\nDia %d", cont +1);
+        printf ("\nCódigo do melhor restaurantes: %d", vc[cont]);
+    }
 
 
     return 0;
-}
-printf ("\nDia %d\n", cont2);
-printf ("Código do restaurante %d: %d \n", cont2, melhor[cont2]);
-}}
-
-return 0;
 }
