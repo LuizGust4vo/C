@@ -1,26 +1,38 @@
 #include <stdio.h>
 
+int conta_0 (char str[]);
+int contaString (char str[]);
 int main ()
 {
-
-    char str1[1000];
-    int i = 0, a = 0;
-
-    while(scanf("%c", str1) != EOF)
+    char palavra[100];
+    int n = 0;
+    while (scanf ("%s", palavra) != EOF)
     {
+        n += conta_o (palavra);
+    }
+    printf ("%d\n", n);
+    return 0;
+}
 
-        do
+int conta_o (char str[])
+{
+    int qtd_o = 0, i;
+    for (i = 0; i < contaString(str); i++)
+    {
+        if (str[i] == 'o')
         {
-            i++;
-        }
-        while (str1[i] != '\0');
-
-        for (int cont = 0; cont < i; cont++)
-        {
-            if (str1[cont] == 'o') a++;
+            qtd_o++;
         }
     }
-    printf ("\n%d", a);
+    return qtd_o;
+}
 
-    return 0;
+int contaString (char str[])
+{
+    int tamanho = 0;
+    while (str[tamanho] != '\0')
+    {
+        tamanho++;
+    }
+    return tamanho;
 }
