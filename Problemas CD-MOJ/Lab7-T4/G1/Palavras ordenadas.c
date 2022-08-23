@@ -1,36 +1,41 @@
 #include <stdio.h>
 
-int main (){
+int main()
+{
+    int l, x, mul = 0;
+    char p[47], n[47];
 
-int T, a = 0, i = 0, s = 0;
-char str1[100], str2[100];
+    scanf("%d", &l);
 
-scanf ("%d", &T);
-
-for (int cont = 0; cont <= T; cont++){
-fgets (str1, 42, stdin);
-
-    do
+    for(int i = 0; i < l; i++)
     {
-        i++;
+        scanf("%s", p);
+        for(x = 0; p[x] != '\0'; x++)
+        {
+            n[x] = p[x];
+            if(n[x] >= 'A' && n[x] <= 'Z')
+            {
+                n[x] += 32;
+            }
+        }
+        n[x] = '\0';
+        for(int y = 0; n[y] != '\0'; y++)
+        {
+            if(n[y] >= n[y + 1] && n[y + 1] != '\0')
+            {
+                mul++;
+            }
+        }
+        if(mul == 0)
+        {
+            printf("%s: O\n", p);
+        }
+        else
+        {
+            printf("%s: N\n", p);
+        }
+        mul = 0;
     }
-    while (str1[i] != '\0');
-a = a + i;
-printf ("\n%d", a);
 
-for (int cont3 = 0; cont3 <= a; cont3++){
-if (str1[cont3] == '\n'){
-for (int cont1 = s; cont1 < (i + a); cont1++){
-str2[cont1] = str1[cont1];
-}}}
-s = a;
-i = 0;
-}
-
-
-for (int cont2 = 0; cont2 <= a; cont2++){
-printf ("%c", str2[cont2]);
-}
-
-return 0;
+    return 0;
 }
