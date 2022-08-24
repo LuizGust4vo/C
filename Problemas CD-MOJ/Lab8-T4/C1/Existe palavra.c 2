@@ -1,0 +1,48 @@
+#include <stdio.h>
+
+int main ()
+{
+
+    long int t1, t2;
+    int igual, i = 0;
+
+    scanf ("%ld %ld", &t1, &t2);
+    char str1[t1][100], str2[t2][100];
+
+    for (int l1 = 0; l1 < t1; l1++)
+    {
+        scanf ("%s", str1[l1]);
+    }
+
+    for (int l2 = 0; l2 < t2; l2++)
+    {
+        scanf ("%s", str2[l2]);
+    }
+
+    for (int i = 0; i < t1; i++)
+    {
+        for (int j = 0; j < t2; j++)
+        {
+
+            igual = 1;
+
+            for (int s = 0, p = 0; str1[i][s] != '\0' || str2[j][p] != '\0'; s++, p++)
+            {
+                if (str1[i][s] != str2[j][p])
+                {
+                    igual = 0;
+                    break;
+                }
+            }
+            if (igual)
+            {
+                printf ("1\n");
+                return 0;
+            }
+        }
+    }
+
+    printf ("0\n");
+
+    return 0;
+}
