@@ -1,21 +1,37 @@
 #include <stdio.h>
 
-int main (){
+int main ()
+{
 
-int lfileira, clugares, i = 0;
-char places[500][3], alf[20] = {"ABCDEFGHIJKLMNOPQRST"};
+    int lfileira, clugares, linhas = 0;
+    char alf[20] = {"ABCDEFGHIJKLMNOPQRST"};
 
-scanf ("%d %d", &lfileira, &clugares);
-char cinema [lfileira][clugares];
+    scanf ("%d %d", &lfileira, &clugares);
+    char bilhetes [lfileira][clugares];
+    char cinema [lfileira][clugares];
 
-for (int l = 0; l < lfileira; l++){
-if (lfileira < 10) printf ("  0%d ", l + 1);
-else printf ("%d ", l + 1);
-}
-for (int c = 0; c < clugares; c++){
-printf ("\n%c", alf[c]);
-}
+    //while (scanf ("%s", bilhetes[linhas]) != EOF){
+    //linhas++;
+    //}
 
+    for (int l = 0; l < lfileira; l++){
+    for (int c = 0; c < clugares; c++){
+    cinema [l][c] = '--';
+    printf ("%", cinema [l][c]);
+    }
+    printf ("\n");
+    }
 
-return 0;
+ /*   for (int l = 0; l < lfileira; l++)
+    {
+        if (lfileira < 10) printf ("  0%d", l + 1);
+        else printf ("%d ", l + 1);
+    }
+    for (int c = (clugares - 1); c >= 0; c--)
+    {
+        printf ("\n%c", alf[c]);
+    }
+    */
+
+    return 0;
 }
