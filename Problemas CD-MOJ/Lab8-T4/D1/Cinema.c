@@ -1,37 +1,51 @@
 #include <stdio.h>
 
-int main ()
+int main()
 {
+    int colunas, linhas;
+    scanf("%d %d\n", &colunas, &linhas);
 
-    int lfileira, clugares, linhas = 0;
-    char alf[20] = {"ABCDEFGHIJKLMNOPQRST"};
+    int posicoes[colunas][linhas];
 
-    scanf ("%d %d", &lfileira, &clugares);
-    char bilhetes [lfileira][clugares];
-    char cinema [lfileira][clugares];
+    char fileira;
+    int local, fileira_hex;
 
-    //while (scanf ("%s", bilhetes[linhas]) != EOF){
-    //linhas++;
-    //}
-
-    for (int l = 0; l < lfileira; l++){
-    for (int c = 0; c < clugares; c++){
-    cinema [l][c] = '--';
-    printf ("%", cinema [l][c]);
-    }
-    printf ("\n");
-    }
-
- /*   for (int l = 0; l < lfileira; l++)
+    while (scanf("%c%d\n", &fileira, &local) != EOF)
     {
-        if (lfileira < 10) printf ("  0%d", l + 1);
-        else printf ("%d ", l + 1);
+
+        fileira_hex = ((int)fileira) - 65;
+        posicoes[fileira_hex][--local] = 'X';
     }
-    for (int c = (clugares - 1); c >= 0; c--)
+
+    for (int i = colunas; i > -1; i--)
     {
-        printf ("\n%c", alf[c]);
+        for (int j = 0; j < linhas; j++)
+        {
+
+            if ( i == colunas &&  j == 0)
+                printf("  ");
+
+            if (i == colunas)
+                printf("%02d ", j+1);
+            else{
+                if (j == 0)
+                {
+                    printf("%c ", (char) (i + 65));
+                }
+
+                if (posicoes[i][j] == 'X')
+                    printf("XX");
+                else
+                printf("--");
+                if( j != linhas -1)
+                printf(" ");
+
+            }
+        }
+
+    printf("\n");
     }
-    */
+
 
     return 0;
 }
