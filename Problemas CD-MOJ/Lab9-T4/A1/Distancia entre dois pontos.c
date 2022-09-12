@@ -2,20 +2,12 @@
 #include <math.h>
 
 struct tipoPonto {
-int xa = 4, ya = 3;
-int xb = 3, yb = -2;
+int x;
+int y;
 };
 
 double distancia (struct tipoPonto pa, struct tipoPonto pb){
-
-D = xb - xa;
-
+double D;
+D = sqrt (pow((pb.x - pa.x), 2) + pow((pb.y - pa.y), 2));
 return D;
-}
-
-int main (){
-
-printf ("%lf", distancia(struct tipoPonto xb, struct tipoPonto xa));
-
-return 0;
 }
