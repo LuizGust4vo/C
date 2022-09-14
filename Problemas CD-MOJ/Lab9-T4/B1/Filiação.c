@@ -10,53 +10,30 @@ struct tipoFiliacao
 struct tipoFiliacao separaLinhaCSV (char linha[240])
 {
     struct tipoFiliacao filiacao;
-    int i1 = 0, i2, i3;
-    int cont1, cont2, cont3 = 0;
+    int i1, i2, i3, cont = 0;
 
-    do
+    for (i1 = 0; linha[i1] != ','; i1++)
     {
-        if (linha[i1] == ',')
-        {
-            for (cont1 = 0; cont1 < i1; cont1++)
-            {
-                filiacao.nome[cont1] = linha[cont1];
-            }
-            filiacao.nome[cont1] = '\0';
-            break;
-        }
-        i1++;
-
+        filiacao.nome[i1] = linha[i1];
     }
-    while (linha[i1] != '\0');
+    filiacao.nome[i1] = '\0';
 
 
-    i2 = i1 + 1;
-    do
+    for (i2 = i1 + 1; linha[i2] != ','; i2++)
     {
-        if (linha[i2] == ',')
-        {
-            for (cont2 = i1; cont2 < i2; cont2++)
-            {
-                filiacao.nomeMae[cont2-i1-1] = linha[cont2];
-            }
-            filiacao.nomeMae[cont2-i1-1] = '\0';
-            break;
-        }
-        i2++;
+        filiacao.nomeMae[cont] = linha[i2];
+        cont++;
     }
-    while (linha[i2] != '\0');
+    filiacao.nomeMae[cont] = '\0';
 
+    cont = 0;
 
-    i3 = i2 + 1;
-    do
+    for (i3 = i2 + 1; linha[i3] != '\0'; i3++)
     {
-        filiacao.nomePai[cont3] = linha[i3];
-        cont3++;
-        i3++;
+        filiacao.nomePai[cont] = linha[i3];
+        cont++;
     }
-    while (linha[i3] != '\0');
-    filiacao.nomePai[cont3] = '\0';
+    filiacao.nomePai[cont] = '\0';
 
-    printf ("%s %s %s\n", filiacao.nome, filiacao.nomeMae, filiacao.nomePai);
+    return filiacao;
 }
-
