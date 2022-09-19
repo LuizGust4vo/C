@@ -1,49 +1,70 @@
 #include <stdio.h>
-#include <math.h>
+#include <string.h>
 
-int tamanho (int x)
+int encaixa(int a, int b)
 {
-    int tx = 0;
+    char vetA[10] = {};
+    int vetAI[10] = {};
+    char vetB[10] = {};
+    int vetBI[10] = {};
+    vetA[0] = (a % 10) + '0';
+    vetB[0] = (b % 10) + '0';
+    int a1 = a / 10;
+    int b1 = b / 10;
+    int tamA = 1;
+    int tamB = 1;
+    char *p;
 
-    do
+    for(int i = 1; i < 9; i++)
     {
-        x = x / 10;
-        tx++;
+        if(a1 % 10 != 0)
+        {
+            vetA[i] = (a1 % 10) + '0';
+            a1 = a1 / 10;
+        }
+        else
+        {
+            break;
+        }
     }
-    while (x > 0);
 
-    return tx;
-}
-
-int encaixa (int a, int b)
-{
-    int end, fator = pow (10, tamanho (b));
-
-    end = a - (a / fator * fator);
-
-    if (end == b) return 1;
-
-    else return 0;
-}
-
-int segmento (int a, int b)
-{
-    int aux;
-    if (tamanho(a) < tamanho(b))
+    for(int i = 1; i < 10; i++)
     {
-        aux = a;
-        a = b;
-        b = aux;
+        if(b1 % 10 != 0)
+        {
+            vetB[i] = (b1 % 10) + '0';
+            b1 = b1 / 10;
+        }
+        else
+        {
+            break;
+        }
     }
-    if (encaixa(a, b) == 1) return 1;
 
-    else return 0;
+    p = strstr(vetA, vetB);
+
+    if(p)
+    {
+        return 1;
+    }
+
+    else
+    {
+        return 0;
+    }
 }
 
-int main ()
+int segmento(int a, int b)
 {
-    printf ("%d\n", encaixa (567890, 678));
-    printf ("%d", segmento (567890, 678));
+    int resp;
+    if(a > b)
+    {
+        resp = encaixa(a, b);
+    }
+    else
+    {
+        resp = encaixa(b, a);
+    }
 
-    return 0;
+    return resp;
 }
