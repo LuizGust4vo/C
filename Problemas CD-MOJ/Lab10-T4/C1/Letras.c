@@ -1,26 +1,43 @@
 #include <stdio.h>
 
-int main ()
+int conta_c (char str[], char c)
 {
-
-    int n, i = 1;
-
-    scanf ("%d", &n);
-
-    printf ("\n");
-    for (int cont = 0; cont < n; cont++)
+    int qtd_c = 0, i;
+    for (i = 0; i < contaString(str); i++)
     {
-        for (int a = n - cont; a > 1; a--)
+        if (str[i] == c)
         {
-            printf (" ");
+            qtd_c++;
+            break;
         }
-        for (int cont1 = 0; cont1 < i; cont1++)
-        {
-            printf ("*");
-        }
-        i = i + 2;
-        printf ("\n");
     }
+    return qtd_c;
+}
 
-    return 0;
+int contaString (char str[])
+{
+    int tamanho = 0;
+    while (str[tamanho] != '\0')
+    {
+        tamanho++;
+    }
+    return tamanho;
+}
+
+int main (){
+
+char caracter;
+char texto[1000];
+double pp;
+int cont = 0;
+
+scanf ("%c", &caracter);
+
+while (scanf ("%s", texto) != EOF){
+cont += conta_c (texto, caracter);
+}
+
+printf ("%d\n", cont);
+
+return 0;
 }
