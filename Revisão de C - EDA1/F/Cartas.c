@@ -15,7 +15,7 @@ int main ()
         for (int cont1 = 1; cont1 <= 4; cont1++)
         {
             if (c[cont1] > c[cont1-1]) contC++;
-        }
+            }
     }
 
     else
@@ -23,7 +23,7 @@ int main ()
         for (int cont2 = 1; cont2 <= 4; cont2++)
         {
             if (c[cont2] < c[cont2-1]) contD++;
-        }
+            }
     }
 
     if (contC == 4)
@@ -36,8 +36,7 @@ int main ()
         printf ("D\n");
     }
 
-    else
-    {
+    else {
         printf ("N\n");
     }
 

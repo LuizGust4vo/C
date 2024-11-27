@@ -36,5 +36,7 @@ int main ()
         if (v[cont2] == 2) printf ("Beto\n");
     }
 
+    printf ("%d %d", sa[0], sb[0]);
+
     return 0;
 }

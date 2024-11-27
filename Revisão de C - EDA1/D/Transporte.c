@@ -8,7 +8,6 @@ int main ()
     int capacidade = 0;
 
     scanf ("%d %d %d", &A, &B, &C);
-    
     scanf ("%d %d %d", &X, &Y, &Z);
 
 
