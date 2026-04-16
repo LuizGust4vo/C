@@ -1,6 +1,6 @@
 # Linguagem C
 
-Repositório destinado a armazenar materiais de estudo e listas de exercícios em linguagem C.
+Repositório destinado a armazenar materiais de estudo, listas de exercícios e demais aplicações desenvolvidas em linguagem C.
 
 ## Contém:
 
