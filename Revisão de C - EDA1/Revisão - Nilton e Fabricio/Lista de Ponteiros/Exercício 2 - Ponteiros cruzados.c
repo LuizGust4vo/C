@@ -1,12 +1,9 @@
 #include <stdio.h>
-#include <locale.h>
 
 // PDF: Lista de Ponteiros. Exercício 2 - Ponteiros cruzados.
 
 int main ()
 {
-    setlocale (LC_ALL, "Portuguese");
-
     // Dados:
     int A = 10, B = 20;
     int *p1 = &A, *p2 = &B;

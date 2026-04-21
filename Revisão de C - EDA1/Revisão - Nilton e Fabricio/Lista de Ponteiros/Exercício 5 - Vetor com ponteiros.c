@@ -4,9 +4,9 @@
 
 int main ()
 {
-    int v[5] = {10, 20, 30, 40, 50}, soma = 0;
+    int v[5] = {10, 20, 30, 40, 50}, *p, soma = 0;
 
-    for (int *p = v; p < v + 5; p++){
+    for (p = v; p < v + 5; p++){
         printf ("%d ", *p);
         soma += *p;
     }

@@ -6,7 +6,6 @@ void dobra(int *x){
     *x = *x * 2;
 }
 
-
 int main ()
 {
     int y = 3;

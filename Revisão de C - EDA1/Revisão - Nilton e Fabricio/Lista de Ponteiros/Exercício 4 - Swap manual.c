@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <locale.h>
 
 // PDF: Lista de Ponteiros. Exercício 4 — Swap manual (sem função).
 

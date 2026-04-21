@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <locale.h>
 
 // PDF: Lista de Ponteiros. Exercício 7 — Maior elemento do vetor.
 
@@ -15,6 +16,8 @@ int maior (int *v, int tamanho)
 
 int main ()
 {
+    setlocale (LC_ALL, "Portuguese");
+
     int v[4] = {4, 3, 2, 1}, t = 4;
 
     printf ("Maior número do vetor = %d\n", maior (v, t));
