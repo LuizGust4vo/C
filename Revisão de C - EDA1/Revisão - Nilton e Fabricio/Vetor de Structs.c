@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <locale.h>
 
-// PDF: Ponteiros com Struct. Exercícios 4 - Vetor de Structs.
+// PDF: Ponteiros com Struct. Exercício 4 - Vetor de Structs.
 // Crie um vetor de 3 structs Aluno
 // Use ponteiros para preencher os dados
 

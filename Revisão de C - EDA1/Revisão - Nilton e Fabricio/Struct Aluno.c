@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <locale.h>
 
-// PDF: Ponteiros com Struct. Exercícios 3 - Struct Aluno.
+// PDF: Ponteiros com Struct. Exercício 3 - Struct Aluno.
 // Crie a struct Aluno
 // Atribua valores a uma variável
 // Use ponteiros para acessar e imprimir os dados
