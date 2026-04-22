@@ -1,7 +1,7 @@
 #include <stdio.h>
 #define t 4
 
-// PDF: Lista de Ponteiros. ExercÌcio 9 ó Invers„o de vetor (in-place).
+// PDF: Lista de Ponteiros. Exerc√≠cio 9 ‚Äî Invers√£o de vetor (in-place).
 // AUTOR: Linus
 
 void inverte (int *v, int tamanho)
@@ -32,7 +32,9 @@ int main()
     return 0;
 }
 
-/*
+/* 
+Aritm√©tica de ponteiros
+
 a = 5 e b = 10
 
 a = a + b = 15
