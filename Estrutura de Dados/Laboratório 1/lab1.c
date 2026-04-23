@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "tipos.h"
+#include "structs.h"
 #include <stdlib.h>
 #include <locale.h>
 
