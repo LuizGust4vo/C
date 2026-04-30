@@ -36,7 +36,7 @@ void listarProdutos (TEstoque *pEstoque)  // Função para listar os produtos ca
     {
         int Id = pEstoque -> produtos[i].id; // Cria um inteiro para armazenar o id do produto
         int Qtd = pEstoque -> produtos[i].quantidade; // Cria um inteiro para armazenar a qtd do produto
-        float Preco = pEstoque -> produtos[i].preco; // Cria um float para armazenar
+        float Preco = pEstoque -> produtos[i].preco; // Cria um float para armazenar o preço do produto
 
         printf("\nID: %d | Quantidade: %d | Preço: %.2f", Id, Qtd, Preco);  // Impressão dos produtos cadastrados + organizado
     }
