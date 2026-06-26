@@ -1,51 +1,62 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 
-int separa(char v[], int p, int r, long int *qtd) {
-    int c = v[r]; // pivô
-    int t, j = p;
+//Estrutura dos registros do dataset de pessoas
+typedef struct
+{
+    char name[100];
+    int age;
+} TPessoa;
 
-    for (int k = p; k < r; ++k) {
-        if (v[k] <= c) {
-            t = v[j];
-            v[j] = v[k];
-            v[k] = t;
-            ++j;
-            (*qtd)++;
-        }
-    }
+// Estrutura do nó da árvore ABP:
+//Esta ABP tem valores menores à esquerda da raíz e valores maiores à direita da raiz.
+typedef struct TABPNo
+{
+    int age;
+    int index; // Posição no dataset de pessoas
+    struct TABPNo *left;
+    struct TABPNo *right;
+} TABPNo;
 
-    t = v[j];
-    v[j] = v[r];
-    v[r] = t;
-    (*qtd)++;
+TABPNo*  AlocaNo(TABPNo* root, int age, int index)
+{
 
-    return j;
 }
 
-void quicksort(char v[], int p, int r, long int *qtd) {
-    if (p < r) {
-        int j = separa(v, p, r, qtd);
-        quicksort(v, p, j - 1, qtd);
-        quicksort(v, j + 1, r, qtd);
+// Função Fill: Gera uma ABP a partir de um um dataset (conjunto de registros do tipo TPessoa).
+//dataCount é uma variável global do sistema. Armazena o total de nós da ABP.
+TABPNo* Fill(TPessoa dataset[], int qtReistros)
+{
+    TABPNo* root = NULL;
+    dataCount = 0;
+    for(int i = 0; i < qtReistros);
+    i++)
+    {
+        Data[i] = dataset[i];
+        root = AlocaNo(root, Data[i].age, i);
+        dataCount++;
     }
+    return root;
 }
 
-int main() {
-    char v[1024];
-    long int qt_trocas = 0;
-    int n;
+TABPNo* Busca(TABPNo* root, int age)
+{
 
-    if (fgets(v, sizeof(v), stdin) != NULL) {
-        v[strcspn(v, "\n")] = '\0'; // Remove a nova linha, se existir
-    }
+}
 
-    n = strlen(v); // Obtém o tamanho do vetor de caracteres
-
-    printf("Antes : %s\n", v);
-    quicksort(v, 0, n - 1, &qt_trocas);
-    printf("Depois: %s\n", v);
-    printf("Trocas: %ld\n", qt_trocas);
-
+int main()
+{
+    TABPNo* No, root;
+    int Idade, QtNosDesalocados;
+    char FonteDados;
+//Definição de qual fonte de dados será testada. Veja nos exemplos de entrada de dados:
+    scanf("%c", &FonteDados);
+//Aloca vários nós contendo idade e posição do dataset (veja tipo TABPNo) à árvore ABP :
+    root = Fill(FonteDados);
+    scanf("%d", &Idade);  //Idade usada no teste de busca. Veja nos exemplos de entrada de dados.
+    PrintRelatorio(root); //Imprime um relatório por ordem de Idade. Veja nos exemplos de saída.
+    No = Busca(root, Idade); //Função de busca de uma idade na ABP
+    QtNosDesalocados = DesalocaABP(root); //Função para desalocar ABP e retornar a qt de nós desalocados
     return 0;
 }

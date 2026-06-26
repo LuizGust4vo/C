@@ -1,5 +1,5 @@
 #include <stdio.h> // Biblioteca padrão para entrada e saída de dados
-#include "structs.h" // Arquivo contendo as structs
+#include "lab1 - structs.h" // Arquivo contendo as structs
 #include <stdlib.h> // malloc, calloc, free
 #include <locale.h> // Adaptação as regras de um país
 
